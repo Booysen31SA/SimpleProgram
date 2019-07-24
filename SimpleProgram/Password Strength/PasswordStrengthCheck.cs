@@ -131,7 +131,7 @@ namespace SimpleProgram.Password_Strength
         /// Returns TRUE if the password has at least one special character
         /// </summary>
         public static bool HasSpecialChar(string password)
-        {
+        { 
             // return password.Any(c => char.IsPunctuation(c)) || password.Any(c => char.IsSeparator(c)) || password.Any(c => char.IsSymbol(c));
             return password.IndexOfAny("!@#$%^&*?_~-£().,".ToCharArray()) != -1;
         }
