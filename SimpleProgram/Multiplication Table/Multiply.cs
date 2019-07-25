@@ -9,10 +9,10 @@ namespace SimpleProgram.Multiplication_Table
             Console.WriteLine("===============================");
             Console.WriteLine("       Multiply Table");
             Console.WriteLine("===============================");
-            Console.Write("Enter The First Integer - ");
+            Console.Write("Enter The First Integer (1 - 12) - ");
             String FirstInt = Console.ReadLine();
 
-            Console.Write("Enter The Second Integer - ");
+            Console.Write("Enter The Second Integer (1 - 12) - ");
             String SecondInt = Console.ReadLine();
 
             Console.WriteLine("First Number  " + FirstInt);

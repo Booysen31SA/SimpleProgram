@@ -22,6 +22,7 @@ namespace SimpleProgram
             Console.WriteLine("1) Multiply Table");
             Console.WriteLine("2) Reverse Words");
             Console.WriteLine("3) Password Strength check");
+            Console.WriteLine("4) Encrypt Password");
             Console.WriteLine("0) Exit");
 
             String Answer = Console.ReadLine();
@@ -47,6 +48,13 @@ namespace SimpleProgram
                 String password = Console.ReadLine();
                 Console.WriteLine(Password_Strength.PasswordStrengthCheck.GetPasswordStrength(password));
                 Console.WriteLine();
+                run();
+            }else if (Answer.Equals("4"))
+            {
+                Console.WriteLine("Enter a password to be Encrypted - ");
+                String password = Console.ReadLine();
+                Encrypt_to_MD5.Encrypt md5 = new Encrypt_to_MD5.Encrypt();
+                Console.WriteLine("Encrypted Password is - "+md5.StringPassword(password));
                 run();
             }
             else if (Answer.Equals("0"))
