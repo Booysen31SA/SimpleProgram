@@ -13,3 +13,5 @@ Sample password policy implementation:
 	e.g special char - !,@,#,$,%,^,&,*<br />
 # MD5 Encrypt Password
 - Encrypt password and shows the password encrypted
+# Generate Password
+- Able to generate password based on length of user input
