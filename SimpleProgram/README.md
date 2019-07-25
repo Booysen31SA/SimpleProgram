@@ -11,3 +11,5 @@ Simple Program that do the following:
     - at least one non-letter char (digit OR special char) <br />
 	e.g digit - 1,2,3,4,5,6,7,8,9,0<br />
 	e.g special char - !,@,#,$,%,^,&,*<br />
+# MD5 Encrypt Password
+- Encrypt password and shows the password encrypted
