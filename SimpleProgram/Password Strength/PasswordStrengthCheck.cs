@@ -8,40 +8,37 @@ namespace SimpleProgram.Password_Strength
 {
     public enum PasswordStrength
     {
-        /// <summary>
+        /// =========================================================================================================================
         /// Blank Password (empty and/or space chars only)
-        /// </summary>
+        /// =========================================================================================================================
         Blank = 0,
-        /// <summary>
+        /// =========================================================================================================================
         /// Either too short (less than 5 chars), one-case letters only or digits only
-        /// </summary>
+        /// =========================================================================================================================
         VeryWeak = 1,
-        /// <summary>
+        /// =========================================================================================================================
         /// At least 5 characters, one strong condition met (>= 8 chars with 1 or more UC letters, LC letters, digits & special chars)
-        /// </summary>
+        /// =========================================================================================================================
         Weak = 2,
-        /// <summary>
+        /// =========================================================================================================================
         /// At least 5 characters, two strong conditions met (>= 8 chars with 1 or more UC letters, LC letters, digits & special chars)
-        /// </summary>
+        /// =========================================================================================================================
         Medium = 3,
-        /// <summary>
+        /// =========================================================================================================================
         /// At least 8 characters, three strong conditions met (>= 8 chars with 1 or more UC letters, LC letters, digits & special chars)
-        /// </summary>
+        /// =========================================================================================================================
         Strong = 4,
-        /// <summary>
+        /// =========================================================================================================================
         /// At least 8 characters, all strong conditions met (>= 8 chars with 1 or more UC letters, LC letters, digits & special chars)
-        /// </summary>
+        /// =========================================================================================================================
         VeryStrong = 5
     }
 
     class PasswordStrengthCheck
     {
-        /// <summary>
-        /// Generic method to retrieve password strength: use this for general purpose scenarios, 
-        /// i.e. when you don't have a strict policy to follow.
-        /// </summary>
-        /// <param name="password"></param>
-        /// <returns></returns>
+        /// =========================================================================================================================
+        /// Methods to use to check password Strength
+        /// =========================================================================================================================
         public static PasswordStrength GetPasswordStrength(string password)
         {
             int score = 0;
@@ -54,13 +51,13 @@ namespace SimpleProgram.Password_Strength
             return (PasswordStrength)score;
         }
 
-        /// <summary>
+        /// =========================================================================================================================
         /// Sample password policy implementation:
         /// - minimum 8 characters
         /// - at lease one UC letter
         /// - at least one LC letter
         /// - at least one non-letter char (digit OR special char)
-        /// </summary>
+        /// =========================================================================================================================
         /// <returns></returns>
         public static bool IsStrongPassword(string password)
         {
@@ -70,9 +67,9 @@ namespace SimpleProgram.Password_Strength
                 && (HasDigit(password) || HasSpecialChar(password));
         }
 
-        /// <summary>
+        /// =========================================================================================================================
         /// Sample password policy implementation following the Microsoft.AspNetCore.Identity.PasswordOptions standard.
-        /// </summary>
+        /// =========================================================================================================================
         public static bool IsValidPassword(string password, PasswordOptions opts)
         {
             return IsValidPassword(
@@ -85,11 +82,14 @@ namespace SimpleProgram.Password_Strength
                 opts.RequireDigit);
         }
 
-
-        /// <summary>
+        /// =========================================================================================================================
+        /// End of Methods to use to check password Strength
+        /// =========================================================================================================================
+        /// 
+        /// =========================================================================================================================
         /// Sample password policy implementation following the Microsoft.AspNetCore.Identity.PasswordOptions standard.
-        /// </summary>
-        public static bool IsValidPassword(
+        /// =========================================================================================================================
+        private static bool IsValidPassword(
             string password,
             int requiredLength,
             int requiredUniqueChars,
@@ -109,45 +109,45 @@ namespace SimpleProgram.Password_Strength
 
         #region Helper Methods
 
-        public static bool HasMinimumLength(string password, int minLength)
+        private static bool HasMinimumLength(string password, int minLength)
         {
             return password.Length >= minLength;
         }
 
-        public static bool HasMinimumUniqueChars(string password, int minUniqueChars)
+        private static bool HasMinimumUniqueChars(string password, int minUniqueChars)
         {
             return password.Distinct().Count() >= minUniqueChars;
         }
 
-        /// <summary>
+        /// =========================================================================================================================
         /// Returns TRUE if the password has at least one digit
-        /// </summary>
-        public static bool HasDigit(string password)
+        /// =========================================================================================================================
+        private static bool HasDigit(string password)
         {
             return password.Any(c => char.IsDigit(c));
         }
 
-        /// <summary>
+        /// =========================================================================================================================
         /// Returns TRUE if the password has at least one special character
-        /// </summary>
-        public static bool HasSpecialChar(string password)
+        /// =========================================================================================================================
+        private static bool HasSpecialChar(string password)
         { 
             // return password.Any(c => char.IsPunctuation(c)) || password.Any(c => char.IsSeparator(c)) || password.Any(c => char.IsSymbol(c));
             return password.IndexOfAny("!@#$%^&*?_~-£().,".ToCharArray()) != -1;
         }
 
-        /// <summary>
+        /// =========================================================================================================================
         /// Returns TRUE if the password has at least one uppercase letter
-        /// </summary>
-        public static bool HasUpperCaseLetter(string password)
+        /// =========================================================================================================================
+        private static bool HasUpperCaseLetter(string password)
         {
             return password.Any(c => char.IsUpper(c));
         }
 
-        /// <summary>
+        /// =========================================================================================================================
         /// Returns TRUE if the password has at least one lowercase letter
-        /// </summary>
-        public static bool HasLowerCaseLetter(string password)
+        /// =========================================================================================================================
+        private static bool HasLowerCaseLetter(string password)
         {
             return password.Any(c => char.IsLower(c));
         }
