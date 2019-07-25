@@ -12,9 +12,11 @@ namespace SimpleProgram.Generate_Password
         {
             const string alphanumericCharacters =
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+                "abcdefghijklmnopqrstuvwxyz" +
                 "abcdefghijklmnopqrstuvwxyz" +
                 "01234567890" +
-                "!@#$%^&*()./";
+                "!@#$%^&*./";
             return GetRandomString(length, alphanumericCharacters);
         }
 
