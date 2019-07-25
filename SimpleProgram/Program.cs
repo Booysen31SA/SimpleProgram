@@ -16,14 +16,14 @@ namespace SimpleProgram
                 Environment.Exit(0);
             }
         }
-       private static void run()
+        private static void run()
         {
             Console.WriteLine("Please Select a Number Below");
             Console.WriteLine("1) Multiply Table");
             Console.WriteLine("2) Reverse Words");
             Console.WriteLine("3) Password Strength check");
             Console.WriteLine("0) Exit");
-            
+
             String Answer = Console.ReadLine();
             if (Answer.Equals("1"))
             {
@@ -45,7 +45,7 @@ namespace SimpleProgram
                 Console.WriteLine("At least 8 characters,\nall strong conditions met: \n>= 8 chars with 1 or more UC letters,\nLC letters,\ndigits & special chars");
                 Console.WriteLine("Please Enter a Password");
                 String password = Console.ReadLine();
-                Console.WriteLine(Password_Strength.PasswordStrengthCheck.GetPasswordStrength(password)); 
+                Console.WriteLine(Password_Strength.PasswordStrengthCheck.GetPasswordStrength(password));
                 Console.WriteLine();
                 run();
             }
@@ -54,6 +54,6 @@ namespace SimpleProgram
                 Environment.Exit(0);
             }
         }
-        
+
     }
 }

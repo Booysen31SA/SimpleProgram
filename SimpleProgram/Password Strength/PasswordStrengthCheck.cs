@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SimpleProgram.Password_Strength
 {
@@ -131,7 +129,7 @@ namespace SimpleProgram.Password_Strength
         /// Returns TRUE if the password has at least one special character
         /// =========================================================================================================================
         private static bool HasSpecialChar(string password)
-        { 
+        {
             // return password.Any(c => char.IsPunctuation(c)) || password.Any(c => char.IsSeparator(c)) || password.Any(c => char.IsSymbol(c));
             return password.IndexOfAny("!@#$%^&*?_~-£().,".ToCharArray()) != -1;
         }
