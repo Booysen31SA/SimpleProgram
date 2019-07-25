@@ -14,7 +14,7 @@ namespace SimpleProgram.Generate_Password
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
                 "abcdefghijklmnopqrstuvwxyz" +
                 "01234567890" +
-                "!@#$%^&*().,/";
+                "!@#$%^&*()./";
             return GetRandomString(length, alphanumericCharacters);
         }
 
