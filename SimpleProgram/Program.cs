@@ -8,13 +8,15 @@ namespace SimpleProgram
         {
             Console.WriteLine("Type 0 to Exit or Enter to Continue");
             String anwser = Console.ReadLine();
-            do
-            {
-                run();
-            } while (anwser.Equals("0"));
+            if (anwser.Equals("0"))
             {
                 Environment.Exit(0);
             }
+            else
+            {
+                run();
+            }
+            
         }
         private static void run()
         {
